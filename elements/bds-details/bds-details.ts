@@ -33,13 +33,16 @@ class BdsDetails extends LitElement {
 
   render() {
     return html`
-      <div class="container">
-        <button @click=${() => (this.open = !this.open)}>Toggle</button>
+      <div class="container" role="group">
+        <button @click=${() =>
+          (this.open = !this.open)} aria-controls="content" aria-expanded=${
+      this.open ? 'true' : 'false'
+    }>Toggle</button>
         <div class=${classMap({
           content: true,
           'content:open': this.open,
         })}>
-          <div class="content__inner">
+          <div class="content__inner" id="content" ?inert=${!this.open}>
             <slot></slot>
           </div>
         </div>

@@ -25,6 +25,10 @@ export function Page() {
         <p>Lorem ipsum dolor sit amet</p>
         <p>Lorem ipsum dolor sit amet</p>
       </bds-details>
+      <details>
+        <summary>Native details example</summary>
+        <p>Content</p>
+      </details>
     </>
   );
 }
